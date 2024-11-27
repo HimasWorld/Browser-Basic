@@ -41,6 +41,9 @@ android {
 
 dependencies {
 
+    // Core Android libraries
+    implementation(libs.androidx.appcompat)  // AppCompat
+    implementation(libs.androidx.webkit)    // WebView
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
