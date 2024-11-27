@@ -1,23 +1,24 @@
+package browser.basic
+
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity  // Import AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)  // This links to activity_main.xml
+        setContentView(R.layout.activity_main)  // This links to the layout XML
 
-        // Initialize WebView
-        val myWebView: WebView = findViewById(R.id.myWebView)
+        val myWebView: WebView = findViewById(R.id.myWebView)  // Initialize WebView
 
-        // Ensure links open in the WebView itself, not in the browser
+        // Enable WebView to handle links within itself
         myWebView.webViewClient = WebViewClient()
 
-        // Enable JavaScript (optional, depending on your needs)
+        // Enable JavaScript if needed
         myWebView.settings.javaScriptEnabled = true
 
-        // Load a website (you can replace this URL with any website)
+        // Load a webpage (you can replace with any URL)
         myWebView.loadUrl("https://www.google.com")
     }
 }
