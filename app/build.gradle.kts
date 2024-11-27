@@ -40,10 +40,11 @@ android {
 }
 
 dependencies {
+    // Add the necessary dependencies for AppCompat and Webkit
+    implementation("androidx.appcompat:appcompat:1.6.1")  // Ensure this is correct version
+    implementation("androidx.webkit:webkit:1.5.0")      // Ensure this is correct version
 
-    // Core Android libraries
-    implementation(libs.androidx.appcompat)  // AppCompat
-    implementation(libs.androidx.webkit)    // WebView
+    // Add other dependencies...
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
