@@ -1,47 +1,23 @@
-package browser.basic
-
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import browser.basic.ui.theme.BrowserBasicTheme
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            BrowserBasicTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+        setContentView(R.layout.activity_main)  // This links to activity_main.xml
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        // Initialize WebView
+        val myWebView: WebView = findViewById(R.id.myWebView)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BrowserBasicTheme {
-        Greeting("Android")
+        // Ensure links open in the WebView itself, not in the browser
+        myWebView.webViewClient = WebViewClient()
+
+        // Enable JavaScript (optional, depending on your needs)
+        myWebView.settings.javaScriptEnabled = true
+
+        // Load a website (you can replace this URL with any website)
+        myWebView.loadUrl("https://www.google.com")
     }
 }
