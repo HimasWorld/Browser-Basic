@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "browser.basic"
-    compileSdk = 34
+    compileSdk = 34  // Set compileSdkVersion to 34 (latest SDK version)
 
     defaultConfig {
         applicationId = "browser.basic"
-        minSdk = 21
-        targetSdk = 34
+        minSdk = 21  // Set minSdkVersion to 21 (Android 5.0 Lollipop)
+        targetSdk = 34  // Set targetSdkVersion to 34 (latest version)
         versionCode = 1
         versionName = "1.0"
 
@@ -27,13 +27,16 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         compose = true
     }
@@ -41,8 +44,8 @@ android {
 
 dependencies {
     // Add the necessary dependencies for AppCompat and Webkit
-    implementation("androidx.appcompat:appcompat:1.6.1")  // Ensure this is correct version
-    implementation("androidx.webkit:webkit:1.5.0")      // Ensure this is correct version
+    implementation("androidx.appcompat:appcompat:1.6.1")  // Ensure this is the correct version
+    implementation("androidx.webkit:webkit:1.5.0")      // Ensure this is the correct version
 
     // Add other dependencies...
     implementation(libs.androidx.core.ktx)
